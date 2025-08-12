@@ -59,10 +59,10 @@ public class Movie extends RentalItem{
     @Override
     public void showDetails(){
        super.showDetails();
-        System.out.println("director: " + director);
-        System.out.println("duration: " + duration);
-        System.out.println("clasificacion: " + ageRating);
-        System.out.println("genero: " + genre);
+        System.out.println("Director: " + director);
+        System.out.println("Duration: " + duration);
+        System.out.println("Clasificacion: " + ageRating);
+        System.out.println("Genero: " + genre);
     }
 
 }

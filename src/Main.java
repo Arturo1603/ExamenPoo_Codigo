@@ -40,12 +40,13 @@ public class Main {
             System.out.println("1. Mostrar peliculas disponibles");
             System.out.println("2. Prestar una pelicula");
             System.out.println("3. Retornar pelicula");
-            System.out.println("4. Salir");
+            System.out.println("4. Detalle de Peliculas y Clientes");
+            System.out.println("5. Salir");
             System.out.println("=================================================");
 
             int opcion = sc.nextInt();
             if (opcion == 1) {
-                movieRentalSystem.showAllItems(false);
+                movieRentalSystem.showItemsAvailabe(false);
             } else if (opcion == 2) {
                 System.out.println("Ingrese el ID del item");
                 int itemId = sc.nextInt();
@@ -57,8 +58,11 @@ public class Main {
                 int itemId = sc.nextInt();
                 System.out.println("Ingrese el ID del usuario");
                 String userId = sc.next();
-                //movieRentalSystem.re(itemId, userId);
-            }else if (opcion == 4){
+                movieRentalSystem.returnMovie(itemId, userId);
+            }else if(opcion == 4){
+                movieRentalSystem.showAllCustomers();
+                movieRentalSystem.showAllItems();
+            }else if (opcion == 5){
                 return;
             }
 

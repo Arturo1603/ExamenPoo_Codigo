@@ -24,6 +24,20 @@ public class MovieRentalSystem {
         customers.add(newCustomer);
     }
 
+    //Creacion metodo returnMovie
+        public void returnMovie(int itemId, String userId){
+        Movie item = getItem(itemId);
+        Customer customer = getUser(userId);
+
+        if (customer == null || item == null) {
+            System.out.println("Cliente o Pelicula no existe");
+            return;
+        }
+
+        item.setAvailable(false);
+        System.out.println("La pelicula ha sido devuelta con extio");
+
+    }
 
     //Creacion metodo rentMovieCustomer
     public void rentMovieCustomer(int itemId, String userId) {
@@ -48,11 +62,22 @@ public class MovieRentalSystem {
         System.out.println("La pelicula se presto de manera satisfactoria");
     }
 
-
+    public void showAllItems(){
+        System.out.println("******************************************");
+        System.out.println("");
+        System.out.println("DETALLE DE PELICULAS");
+        System.out.println("*******************************************");
+        System.out.println("");
+        for (Movie item: movies){
+            item.showDetails();
+            System.out.println("---------------------------------------------------");
+        }
+        System.out.println("********************************************");
+    }
     // metodo que imprime la informacion de los items
     // true: imprime todos los items (disponibles/no disponibles)
     // false: imprime solo los items disponibles
-    public void showAllItems(boolean condicion) {
+    public void showItemsAvailabe(boolean condicion) {
         if (condicion) {
             for (Movie item: movies) {
                 item.showDetails();
@@ -70,10 +95,16 @@ public class MovieRentalSystem {
 
 
     public void showAllCustomers( ) {
-        for (Customer item: customers) {
+        System.out.println("******************************************");
+        System.out.println("");
+        System.out.println("DETALLE DE CLIENTES");
+        System.out.println("*******************************************");
+        System.out.println("");
+        for (Customer item: customers){
             item.showCustomerDetails();
-            System.out.println("++++++++++++++++++++++++++++++++++");
+            System.out.println("---------------------------------------------------");
         }
+        System.out.println("********************************************");
     }
 
 

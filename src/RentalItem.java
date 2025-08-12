@@ -41,9 +41,8 @@ public class RentalItem {
     //creacion metodo para mostrar
 
     public void showDetails(){
-        System.out.println("*************************************************************");
-        System.out.println();
-        System.out.println("id: " + itemId);
+
+        System.out.println("Id: " + itemId);
         System.out.println("Nombre: " + itemName );
         System.out.println("Prestado: " + available);
 
