@@ -74,9 +74,7 @@ public class MovieRentalSystem {
         }
         System.out.println("********************************************");
     }
-    // metodo que imprime la informacion de los items
-    // true: imprime todos los items (disponibles/no disponibles)
-    // false: imprime solo los items disponibles
+
     public void showItemsAvailabe(boolean condicion) {
         if (condicion) {
             for (Movie item: movies) {
@@ -111,9 +109,7 @@ public class MovieRentalSystem {
 
 
 
-    // metodo para obtener un item por su id
-    // itera sobre el array de items y en caso haya una coincidencia con el id proporcionado
-    // retorna el item, caso contrario retorna null
+
     private Movie getItem(int itemId) {
         for (Movie item: movies) {
             if (item.getItemId() == itemId) {
@@ -123,9 +119,7 @@ public class MovieRentalSystem {
         return null;
     }
 
-    // metodo para obtener un usuario por su id
-    // itera sobre el array de users y en caso haya una coincidencia con el id proporcionado
-    // retorna el usuario, caso contrario retorna null
+
     private Customer getUser(String userId) {
         for (Customer customer: customers) {
             if (customer.getCustomerId().equals(userId)) {
